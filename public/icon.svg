@@ -1,0 +1,6 @@
+<svg width="20" height="24" viewBox="0 0 20 24" color="white" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer file shape with folded corner -->
+  <path d="M3 3H15L21 9V21H3V3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Folded corner line -->
+  <path d="M15 3V9H21" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+</svg>
