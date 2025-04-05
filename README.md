@@ -14,4 +14,5 @@ A draggable, resizable sticky note application built with React. Create, move, a
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/note-app.git
+   git clone https://github.com/Mrutyu-mark-v/NOTE-APP.git
+   ````
