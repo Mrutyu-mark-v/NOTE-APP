@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Trash from "../icons/Trash";
-
+import { setNewOffset } from "../utils";
 const NoteCard = ({ note }) => {
   const body = JSON.parse(note.body);
   const [position, setPosition] = useState(
@@ -39,17 +39,21 @@ const NoteCard = ({ note }) => {
   };
 
   const mouseMove = (e) => {
-    const moveX = e.clientX - mouseStartPos.x;
-    const moveY = e.clientY - mouseStartPos.y;
+    // Calculate movement direction
+    let mouseMoveDir = {
+      x: mouseStartPos.x - e.clientX,
+      y: mouseStartPos.y - e.clientY,
+    };
 
+    // Update start position for next move
     mouseStartPos.x = e.clientX;
     mouseStartPos.y = e.clientY;
 
-    setPosition((prev) => ({
-      x: prev.x + moveX,
-      y: prev.y + moveY,
-    }));
+    // Use your utility function to calculate new position
+    const newPosition = setNewOffset(cardRef.current, mouseMoveDir);
+    setPosition(newPosition);
   };
+
 
   const mouseUp = () => {
     document.removeEventListener("mousemove", mouseMove);
